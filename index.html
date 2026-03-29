@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sweet Sweet Sweet Portfolio</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons for cute vector graphics -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts: Quicksand for a soft, rounded, and sweet typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration for pastel theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            pink: '#FFE4E1',    // MistyRose
+                            blue: '#E0FFFF',    // LightCyan
+                            yellow: '#FFFACD',  // LemonChiffon
+                            purple: '#E6E6FA',  // Lavender
+                            rose: '#FFB6C1',    // LightPink
+                            text: '#5c4d51'     // Soft dark brown for text
+                        }
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom scrollbar to match the sweet theme */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FFE4E1; }
+        ::-webkit-scrollbar-thumb { background: #FFB6C1; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF9AA2; }
+
+        /* Glassmorphism effect utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pastel-pink via-white to-pastel-blue min-h-screen text-pastel-text selection:bg-pastel-rose selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-pastel-rose flex items-center gap-2 hover:scale-105 transition-transform">
+                <i data-lucide="sparkles" class="text-pastel-yellow fill-pastel-yellow"></i>
+                My Space
+            </a>
+            <div class="hidden md:flex space-x-6 font-semibold text-gray-600">
+                <a href="#about" class="hover:text-pastel-rose transition-colors">Journey</a>
+                <a href="#hobbies" class="hover:text-pastel-rose transition-colors">Hobbies</a>
+                <a href="#contact" class="hover:text-pastel-rose transition-colors">Connect</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-pastel-rose" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 min-h-[80vh] flex flex-col justify-center items-center text-center relative overflow-hidden">
+        <!-- Floating decorative elements -->
+        <div class="absolute top-40 left-10 md:left-32 text-pastel-rose opacity-50 animate-float"><i data-lucide="heart" size="48"></i></div>
+        <div class="absolute bottom-20 right-10 md:right-32 text-pastel-blue opacity-80 animate-float" style="animation-delay: 1s;"><i data-lucide="cloud" size="64" class="fill-current"></i></div>
+        <div class="absolute top-20 right-20 text-pastel-yellow opacity-60 animate-bounce-slow"><i data-lucide="star" size="40" class="fill-current"></i></div>
+
+        <!-- Profile Image Container -->
+        <div class="relative w-48 h-48 md:w-56 md:h-56 mb-8 mx-auto group">
+            <div class="absolute inset-0 bg-pastel-rose rounded-full animate-pulse opacity-50 scale-105 group-hover:scale-110 transition-transform duration-500"></div>
+            <!-- Profile Avatar (Updated with your provided link) -->
+            <img src="https://i.ibb.co/R8JDQtD/avatar.jpg" 
+                 alt="Profile Avatar" 
+                 class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl z-10 transition-transform duration-500 group-hover:rotate-3">
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, Welcome to my World!</h1>
+        <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+            An Environmental Science graduate turned Researcher. <br>
+            Lover of all things cute, crafty, and creative.
+        </p>
+        
+        <a href="#about" class="bg-white text-pastel-rose border-2 border-pastel-rose px-8 py-3 rounded-full font-bold shadow-md hover:bg-pastel-rose hover:text-white transition-all duration-300 flex items-center gap-2 group">
+            Discover My Journey
+            <i data-lucide="arrow-down" class="group-hover:translate-y-1 transition-transform"></i>
+        </a>
+    </section>
+
+    <!-- Journey Section (Education & Career) -->
+    <section id="about" class="py-20 px-6 bg-white/40">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i data-lucide="map" class="text-pastel-rose"></i>
+                My Journey
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education Card -->
+                <div class="glass-card p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 bg-pastel-blue w-24 h-24 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 text-pastel-blue">
+                            <i data-lucide="graduation-cap" size="28"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Education in Australia</h3>
+                        <p class="text-gray-500 mb-4 font-medium">Studied Environmental Science</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Spent my university years under the bright Australian sun, exploring ecosystems, sustainability, and nature's beautiful complexities. It shaped my love for our planet. ANNNNND I like SODA.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Career Card -->
+                <div class="glass-card p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-300 relative overflow-hidden group">
+                    <div class="absolute -left-6 -bottom-6 bg-pastel-rose w-24 h-24 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="bg-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm mb-6 text-pastel-rose">
+                            <i data-lucide="microscope" size="28"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Research Career</h3>
+                        <p class="text-gray-500 mb-4 font-medium">Currently working in China</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Brought my knowledge back home. Currently working as a dedicated researcher in China, applying scientific methods to solve real-world environmental challenges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+                <i data-lucide="palette" class="text-pastel-purple"></i>
+                Things I Love
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                
+                <!-- Handicrafts -->
+                <div class="order-2 md:order-1 space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-pastel-purple/30 text-purple-700 px-4 py-2 rounded-full font-semibold text-sm mb-2">
+                        <i data-lucide="scissors" size="16"></i> Handicrafts & DIY
+                    </div>
+                    <h3 class="text-3xl font-bold">Creating Magic by Hand</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        When I'm away from the laboratory, my hands are usually busy crafting. I find profound peace in turning raw materials into beautiful, tangible art pieces. Every handmade item holds a unique soul and a touch of sweetness.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 rounded-3xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300 border-8 border-white">
+                    <!-- Placeholder image for handicrafts -->
+                    <img src="https://images.unsplash.com/photo-1584448141569-69f342da535c?auto=format&fit=crop&q=80&w=800" alt="Handicrafts" class="w-full h-64 object-cover">
+                </div>
+
+                <!-- Cartoon Dolls -->
+                <div class="order-3 rounded-3xl overflow-hidden shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300 border-8 border-white">
+                    <!-- Placeholder image for plushies/dolls -->
+                    <img src="https://images.unsplash.com/photo-1558285549-2a06eeacdcaf?auto=format&fit=crop&q=80&w=800" alt="Cartoon Dolls" class="w-full h-64 object-cover">
+                </div>
+                <div class="order-4 space-y-4 md:pl-8">
+                    <div class="inline-flex items-center gap-2 bg-pastel-yellow/50 text-yellow-700 px-4 py-2 rounded-full font-semibold text-sm mb-2">
+                        <i data-lucide="smile" size="16"></i> Cartoon Dolls
+                    </div>
+                    <h3 class="text-3xl font-bold">A Plushie Collector</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        I have a massive soft spot for cute cartoon dolls and plushies! They bring so much warmth, color, and joy into my living space. They are the perfect little companions after a long day of research.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-white/60 py-12 mt-10 border-t border-white shadow-inner">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="w-16 h-16 bg-gradient-to-tr from-pastel-rose to-pastel-yellow rounded-full flex items-center justify-center mx-auto mb-6 text-white shadow-md">
+                <i data-lucide="mail" size="28"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">Let's stay connected!</h2>
+            <p class="text-gray-500 mb-8 max-w-md mx-auto">
+                Whether you want to talk about environmental science, swap handicraft tips, or share cute doll photos, I'd love to hear from you.
+            </p>
+            
+            <!-- Social Links - Replace hrefs with actual links later -->
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://github.com" target="_blank" class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-pastel-rose hover:-translate-y-1 transition-all">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-pastel-blue hover:-translate-y-1 transition-all">
+                    <i data-lucide="twitter"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-600 hover:text-pastel-purple hover:-translate-y-1 transition-all">
+                    <i data-lucide="instagram"></i>
+                </a>
+            </div>
+
+            <p class="text-sm text-gray-400">
+                Designed with <i data-lucide="heart" size="14" class="inline text-pastel-rose fill-pastel-rose mx-1"></i> 
+                &copy; <span id="year"></span> My Sweet Portfolio
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts to initialize Icons and handle minor interactions -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Dynamically set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple Mobile Menu Toggle Logic (Alert for demonstration, can be expanded)
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        mobileBtn.addEventListener('click', () => {
+            // In a full app, this would toggle a hidden mobile menu div
+            const navLinks = document.querySelector('.hidden.md\\:flex');
+            if (navLinks.classList.contains('hidden')) {
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-lg');
+            } else {
+                navLinks.classList.add('hidden');
+                navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'p-4', 'shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
